@@ -1,0 +1,47 @@
+@import url('https://fonts.googleapis.com/css2?family=Patrick+Hand&family=Permanent+Marker&display=swap');
+:root{--paper:#f8f6ef;--ink:#242420;--soft:#77756c;--line:#b9b5a9;--red:#c94f43;--green:#4d7960}
+*{box-sizing:border-box}
+html,body{margin:0;min-height:100%;background:var(--paper);color:var(--ink);font-family:'Patrick Hand','Comic Sans MS',cursive}
+body{min-height:100vh;overflow-x:hidden;background-image:radial-gradient(#d8d3c6 0.55px,transparent .55px);background-size:8px 8px}
+button{font:inherit;color:inherit;cursor:pointer;touch-action:manipulation}
+.paper-grain{pointer-events:none;position:fixed;inset:0;z-index:10;opacity:.13;background:repeating-linear-gradient(0deg,transparent 0 5px,#b7b1a4 6px,transparent 7px);mix-blend-mode:multiply}
+.topbar{height:64px;border-bottom:2px solid var(--ink);display:flex;align-items:center;justify-content:space-between;padding:0 clamp(12px,4vw,48px);position:relative;z-index:2;background:rgba(248,246,239,.9)}
+.brand{font:18px 'Permanent Marker',cursive;letter-spacing:1px;text-align:center}.brand span{display:block;font:10px 'Patrick Hand',cursive;letter-spacing:3px;color:var(--soft)}
+.icon-btn{background:none;border:2px solid var(--ink);border-radius:50%;width:38px;height:38px;font-size:22px;box-shadow:2px 2px 0 var(--ink)}
+main{width:min(1040px,100%);margin:0 auto;padding:18px clamp(12px,3vw,30px) 26px;min-height:calc(100vh - 110px)}
+.screen{animation:appear .24s ease-out}.hidden{display:none!important}
+@keyframes appear{from{opacity:0;transform:translateY(5px)}to{opacity:1;transform:none}}
+.menu-screen{text-align:center;min-height:690px;display:flex;align-items:center;flex-direction:column;justify-content:center;position:relative;padding:22px 0}
+.eyebrow{font:12px 'Permanent Marker',cursive;letter-spacing:3px;color:var(--soft);margin:8px 0}
+h1{font:clamp(46px,9vw,88px)/.94 'Permanent Marker',cursive;margin:12px 0 18px;transform:rotate(-2deg);text-shadow:3px 3px 0 #e3dfd3}
+h1 span{display:inline-block;margin-left:42px;text-decoration:underline;text-decoration-thickness:4px;text-underline-offset:8px}
+.subtitle{font-size:20px;max-width:430px;margin:0 auto 24px;color:#55534c}
+.menu-actions{display:flex;flex-direction:column;gap:12px;width:min(320px,90%)}
+.sketch-btn{border:2px solid var(--ink);background:var(--paper);padding:12px 18px;font-size:19px;border-radius:7px;box-shadow:4px 4px 0 var(--ink);transform:rotate(-.4deg);transition:transform .12s,box-shadow .12s}
+.sketch-btn:hover{transform:translate(2px,2px) rotate(0);box-shadow:2px 2px 0 var(--ink)}
+.sketch-btn.primary{background:#fffef9;font-weight:bold}
+.text-btn,.back-btn{background:transparent;border:0;text-decoration:underline;text-underline-offset:4px;font-size:17px;padding:8px}
+.menu-doodle{width:min(360px,95%);margin-top:28px;color:var(--ink);font-size:14px;display:flex;flex-direction:column;align-items:center;gap:3px}
+.menu-doodle svg{width:100%;height:auto;fill:none;stroke:currentColor;stroke-width:3;stroke-linecap:round;stroke-linejoin:round}
+.tiny-note{font-size:13px;color:#8b887e;margin-top:18px}.scribble{position:absolute;font-size:44px}.doodle-star{top:12%;right:15%;transform:rotate(15deg)}
+.section-head{display:flex;align-items:center;gap:14px;margin:12px 0 18px}.section-head h2,h2{font:clamp(30px,5vw,42px) 'Permanent Marker',cursive;margin:0}.section-head>div{flex:1}.progress-pill{border:2px solid var(--ink);padding:5px 10px;border-radius:20px;white-space:nowrap;transform:rotate(2deg)}
+.chapter-list{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:16px}.chapter-chip{background:transparent;border:1.5px solid var(--line);border-radius:18px;padding:5px 10px;font-size:14px}.chapter-chip.active{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.level-grid{display:grid;grid-template-columns:repeat(10,minmax(0,1fr));gap:8px}
+.level-cell{aspect-ratio:1;border:2px solid var(--ink);background:#fffdf7;border-radius:7px;box-shadow:2px 2px 0 var(--ink);font-size:17px;position:relative}
+.level-cell.done{background:#e2e9df}.level-cell.locked{color:#aaa69b;border-color:#c9c4b7;box-shadow:1px 1px 0 #c9c4b7;cursor:not-allowed;background:transparent}.level-cell.current{outline:3px dashed var(--red);outline-offset:2px}
+.level-cell .tick{position:absolute;right:3px;top:0;font-size:10px;color:var(--green)}
+.note-card{border:2px solid var(--ink);padding:14px 20px;max-width:680px;margin:18px 0 24px;background:#fffdf7;box-shadow:5px 5px 0 #ded9cc;font-size:19px;line-height:1.45;transform:rotate(-.3deg)}
+.game-screen{width:100%}.game-heading{display:flex;align-items:center;gap:12px;margin:2px 0 12px}.level-label{flex:1;min-width:0}.level-label span{display:block;color:var(--soft);font-size:12px;letter-spacing:2px}.level-label strong{font:22px 'Permanent Marker',cursive;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;display:block}
+.game-actions{display:flex;gap:6px}.small-btn{border:1.5px solid var(--ink);background:#fffdf7;border-radius:5px;padding:6px 10px;font-size:16px;box-shadow:2px 2px 0 var(--ink)}
+.canvas-wrap{position:relative;border:2px solid var(--ink);border-radius:5px;overflow:hidden;background:#fffdf7;box-shadow:5px 5px 0 #d9d4c8}
+#gameCanvas{display:block;width:100%;height:auto;aspect-ratio:16/9;touch-action:none}
+.toast{position:absolute;top:12px;left:50%;transform:translateX(-50%);background:#fffdf0;border:2px solid var(--ink);padding:7px 13px;border-radius:6px;box-shadow:3px 3px 0 var(--ink);font-size:17px;max-width:90%;text-align:center;z-index:3}
+.game-overlay{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(248,246,239,.88);z-index:2;padding:20px}
+.overlay-card{width:min(390px,95%);border:2px solid var(--ink);padding:20px;background:var(--paper);box-shadow:6px 6px 0 var(--ink);text-align:center;transform:rotate(-1deg)}
+.overlay-card h2{font-size:32px}.overlay-card p{font-size:19px}.overlay-buttons{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:16px}.overlay-buttons button{border:2px solid var(--ink);background:#fffdf7;padding:8px 13px;border-radius:5px;box-shadow:2px 2px 0 var(--ink);font-size:17px}
+.game-bottom{padding:12px 2px}.progress-track{height:6px;border:1px solid var(--ink);border-radius:5px;overflow:hidden}.progress-track div{height:100%;width:1%;background:var(--ink);transition:width .2s}.bottom-meta{display:flex;justify-content:space-between;gap:10px;font-size:14px;color:var(--soft);margin-top:6px}.bottom-meta span:last-child{text-align:right}
+.touch-controls{display:none;justify-content:space-between;align-items:center;margin-top:12px;gap:20px;user-select:none}.move-pads{display:flex;gap:10px}.touch-btn{border:2px solid var(--ink);background:#fffdf7;box-shadow:3px 3px 0 var(--ink);border-radius:9px;min-width:60px;height:52px;font-size:23px;touch-action:none}.jump-btn{min-width:100px;font-size:17px}
+footer{height:45px;border-top:1px solid #d8d3c6;display:flex;align-items:center;justify-content:space-between;padding:0 clamp(12px,4vw,48px);font-size:14px;color:#77756c}
+@media(max-width:700px){.level-grid{grid-template-columns:repeat(5,minmax(0,1fr));gap:9px}.level-cell{font-size:19px}.menu-screen{min-height:calc(100vh - 150px)}.doodle-star{right:7%;top:8%}.game-heading{gap:5px;flex-wrap:wrap}.game-heading>.back-btn{font-size:14px;padding:6px}.level-label strong{font-size:18px}.game-actions{gap:4px}.small-btn{padding:5px 8px}.touch-controls{display:flex}.bottom-meta{font-size:13px}.brand{font-size:14px}.brand span{font-size:9px}}
+@media(min-width:701px){.level-grid{grid-template-columns:repeat(10,minmax(0,1fr))}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}

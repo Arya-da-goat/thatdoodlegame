@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+<meta name="theme-color" content="#f8f6ef">
+<title>That Doodle Game — 100 Tiny Trials</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="paper-grain" aria-hidden="true"></div>
+<header class="topbar">
+  <button class="icon-btn" id="homeBtn" aria-label="Main menu">⌂</button>
+  <div class="brand">THAT DOODLE GAME <span>100 TINY TRIALS</span></div>
+  <button class="icon-btn" id="soundBtn" aria-label="Toggle sound">♪</button>
+</header>
+<main>
+  <section id="menuScreen" class="screen menu-screen">
+    <div class="scribble doodle-star">✳</div>
+    <p class="eyebrow">A SMALL ROOM. A BIG BRAIN.</p>
+    <h1>THAT DOODLE<br><span>GAME</span></h1>
+    <p class="subtitle">One door. One little doodle. One hundred ways to think sideways.</p>
+    <div class="menu-actions">
+      <button class="sketch-btn primary" id="playBtn">▶ Continue adventure</button>
+      <button class="sketch-btn" id="levelsBtn">▦ Choose a level</button>
+      <button class="text-btn" id="howBtn">How to play?</button>
+    </div>
+    <div class="menu-doodle" aria-hidden="true">
+      <svg viewBox="0 0 320 115"><path d="M20 95 L300 95 M35 94 L35 54 Q36 48 42 48 L82 48 M238 95 L238 45 Q239 38 246 38 L278 38 L278 95" /><circle cx="91" cy="40" r="12"/><path d="M91 52 L91 77 M91 60 L76 69 M91 60 L105 67 M91 77 L80 94 M91 77 L103 94 M252 53 L265 53 L265 95 M260 53 L260 38" /></svg>
+      <span>← move · jump →</span>
+    </div>
+    <p class="tiny-note">Made of ink, curiosity, and questionable decisions.</p>
+  </section>
+
+  <section id="levelSelect" class="screen hidden">
+    <div class="section-head"><button class="back-btn" id="levelsBack">← Back</button><div><p class="eyebrow">THE NOTEBOOK</p><h2>Pick your page</h2></div><span class="progress-pill" id="progressPill">0 / 100</span></div>
+    <div id="chapterList" class="chapter-list"></div>
+    <div id="levelGrid" class="level-grid"></div>
+  </section>
+
+  <section id="howScreen" class="screen hidden">
+    <button class="back-btn" id="howBack">← Back</button>
+    <p class="eyebrow">FIELD NOTES</p><h2>How to play</h2>
+    <div class="note-card">
+      <p><b>Desktop:</b> A / ← and D / → to move. Space / ↑ to jump. R to restart. Esc to pause.</p>
+      <p><b>Touch:</b> Use the hand-drawn buttons under the room.</p>
+      <p><b>Goal:</b> Find a way to the door. Some pages have a trick beyond ordinary platforming—read the hint, inspect the room, and try something unexpected.</p>
+      <p><b>Progress:</b> Unlocked pages are saved in this browser.</p>
+    </div>
+    <button class="sketch-btn primary" id="howPlay">Got it. Let's go!</button>
+  </section>
+
+  <section id="gameScreen" class="screen game-screen hidden">
+    <div class="game-heading">
+      <button class="back-btn" id="gameBack">← Menu</button>
+      <div class="level-label"><span id="chapterLabel">CHAPTER 1</span><strong id="levelTitle">The First Step</strong></div>
+      <div class="game-actions"><button class="small-btn" id="hintBtn">Hint ?</button><button class="small-btn" id="restartBtn">↻</button><button class="small-btn" id="pauseBtn">Ⅱ</button></div>
+    </div>
+    <div class="canvas-wrap">
+      <canvas id="gameCanvas" width="960" height="540" aria-label="Puzzle platformer game area"></canvas>
+      <div id="toast" class="toast hidden"></div>
+      <div id="overlay" class="game-overlay hidden"></div>
+    </div>
+    <div class="game-bottom">
+      <div class="progress-track"><div id="progressBar"></div></div>
+      <div class="bottom-meta"><span id="levelCounter">LEVEL 1 / 100</span><span id="objective">Reach the door.</span></div>
+      <div class="touch-controls">
+        <div class="move-pads"><button class="touch-btn" data-hold="left">←</button><button class="touch-btn" data-hold="right">→</button></div>
+        <button class="touch-btn jump-btn" data-hold="jump">JUMP ↗</button>
+      </div>
+    </div>
+  </section>
+</main>
+<footer>✎ <span>keep trying, little doodle</span> <span id="footerProgress">0 pages filled</span></footer>
+<script src="script.js"></script>
+</body>
+</html>
